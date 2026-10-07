@@ -1,0 +1,21 @@
+{
+  "ruleId": "EV-002",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "EV-002-compliant.json",
+      "expect": {
+        "ruleId": "EV-002",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "EV-002-unsafe.json",
+      "expect": {
+        "ruleId": "EV-002",
+        "count": 1
+      }
+    }
+  ]
+}

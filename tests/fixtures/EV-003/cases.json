@@ -1,0 +1,33 @@
+{
+  "ruleId": "EV-003",
+  "configure": {
+    "EV-003": {
+      "values": [
+        "书证",
+        "物证",
+        "视听资料",
+        "电子数据",
+        "证人证言",
+        "鉴定意见"
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "EV-003-compliant.json",
+      "expect": {
+        "ruleId": "EV-003",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "EV-003-unsafe.json",
+      "expect": {
+        "ruleId": "EV-003",
+        "count": 1
+      }
+    }
+  ]
+}

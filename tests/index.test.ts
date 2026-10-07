@@ -1,0 +1,40 @@
+import { describeTablePlugin } from './table-plugin-suite.ts'
+import { Config } from '../src/config.ts'
+import { parseMaterial, runCheck, SPEC } from '../src/model.ts'
+import { buildView } from '../src/view.ts'
+import { inject, name, resolvePackageFile, TOOL_NAME } from '../src/index.ts'
+
+describeTablePlugin({
+  name,
+  inject,
+  TOOL_NAME,
+  resolvePackageFile,
+  Config,
+  rulesFile: 'rules/evidence-check.yaml',
+  parseMaterial,
+  runCheck,
+  buildView,
+  columnNames: SPEC.columns,
+  samples: {
+    good: {
+          "caseNo": "（2026）某民初 1234 号",
+          "caseName": "买卖合同纠纷",
+          "party": "原告某某公司",
+          "rows": [
+                {
+                      "证据编号": "证1",
+                      "待证事实": "双方于 2025 年 3 月 10 日签订买卖合同",
+                      "证据名称": "买卖合同原件",
+                      "证据形式": "书证",
+                      "来源": "原告留存，签订时取得",
+                      "页码": "第 1-3 页",
+                      "原件": "原件",
+                      "取得日期": "2025-03-10",
+                      "提交日期": "2026-03-02",
+                      "保管人": "王律师"
+                }
+          ]
+    },
+    unknownColumn: { rows: [{ 备注: '甲' }] },
+  },
+})
