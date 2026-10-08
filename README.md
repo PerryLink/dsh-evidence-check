@@ -61,14 +61,13 @@ applies a versioned rule pack, and returns a report.
 
 | Rule | Check | Severity | Basis kind |
 |---|---|---|---|
-| `EV-001` | every exhibit names itself and its fact | warn | principle |
-| `EV-002` | every exhibit records its source | warn | principle |
+| `EV-001` | every exhibit names itself and its fact | warn | direct |
+| `EV-002` | every exhibit records its source | warn | direct |
 | `EV-003` | the form comes from your vocabulary (off by default) | info | local |
 | `EV-004` | acquisition is not later than submission | warn | principle |
 | `EV-005` | exhibit numbers are unique | warn | principle |
 | `EV-006` | the list names its case and filing party | warn | principle |
 | `EV-007` | the fact column holds no unreplaced placeholder | warn | principle |
-
 ## Install
 
 ```sh
