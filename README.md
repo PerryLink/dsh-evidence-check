@@ -1,4 +1,24 @@
-# dsh-evidence-check
+# dsh-evidence-check — Court exhibit list completeness and internal consistency check
+
+`dsh-evidence-check` reads one exhibit list — the case header plus one row per exhibit — and checks that list's own completeness and internal consistency: that each exhibit carries a name and the fact it is offered to prove (`claim`, `exhibitName`), that its `source` is recorded, that its `form` comes from the vocabulary you configure, that `obtainedAt` parses and does not fall after `submittedAt`, that no `exhibitNo` is repeated, that the header declares `caseNo` and `party`, and that no template placeholder survives in the fact column. It does not decide whether evidence is authentic, lawfully obtained or relevant, whether it proves the fact, or whether it should be admitted or excluded: that is the court's judgement after cross-examination.
+
+## What it answers
+
+| You ask | What it answers |
+|---|---|
+| We filed inside the period the court set. Will this tool confirm that? | No. `EV-004` only checks that the two date columns the list itself carries can be parsed and that `obtainedAt` is not later than `submittedAt`; it computes no evidence period, because that period is set by the court's notice or agreed by the parties, with extensions and suspensions of its own. A day-by-day reading of the list is therefore not a finding about timeliness. |
+| The exhibit name is filled in but the fact column is blank. | `EV-001` covers `claim` and `exhibitName` together and asks only that at least one of the two be filled; it reports a row where both cells are empty, and does not judge whether the exhibit is enough to prove the fact. |
+| Two rows carry the same exhibit number. | `EV-005` compares the `exhibitNo` values inside the list, ignoring whitespace, and reports the later row with the row it duplicates. It only establishes that the number is not unique — whether that is a double registration or a mis-copied number is left to you. A blank number cell is not part of that comparison. |
+| The source of this exhibit is obvious, yet the rule fires. | Because the source cell is not filled. `EV-002` requires a `source` on every exhibit the list gives that column to; it checks that the cell has content, not that the source is lawful or that the way it was obtained was proper. |
+| Our list has no case number or filing party in its header. | `EV-006` reads the header and reports whichever of `caseNo` and `party` the material does not declare. It checks the declaration, not whether what is declared is correct, and a missing declaration is reported once for the header rather than row by row. |
+| Which rule reports `skipped`, and why? | `EV-003` does by default: its `values` ship empty, which means the form vocabulary is unconfigured, and the plugin will not hard-code a list of kinds of evidence because civil, administrative and criminal procedure do not enumerate the same ones. Fill `values` with your procedure's own kinds and the rule runs; it then checks only that each `form` cell is one of them, not which kind a piece of evidence really is. |
+
+## Standards it follows
+
+| Document | Number | Cited by rules |
+|---|---|---|
+| 《最高人民法院关于民事诉讼证据的若干规定》 | 法释〔2019〕19号（现行版本与条号本次未核实） | EV-001, EV-002, EV-004, EV-005, EV-006, EV-007 |
+| 《最高人民法院关于民事诉讼证据的若干规定》 | 法释〔2019〕19号（自 2020 年 5 月 1 日起施行） | EV-003 |
 
 **Boundary:** this plugin checks an **证据清单** for what a list can be held to mechanically — that every
 exhibit names itself and the fact it is offered to prove, that its source is recorded, that its form comes

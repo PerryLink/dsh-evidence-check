@@ -1,4 +1,24 @@
-# dsh-evidence-check
+# dsh-evidence-check — Verificação da completude e da coerência interna de uma lista de provas judiciais
+
+`dsh-evidence-check` lê uma lista de exhibits —o cabeçalho do processo mais uma linha por exhibit— e verifica a completude e a coerência interna dessa lista: se cada exhibit traz nome e o facto que pretende provar (`claim`, `exhibitName`), se o seu `source` está registado, se o seu `form` vem do vocabulário que você configurar, se `obtainedAt` é analisável e não é posterior a `submittedAt`, se não há `exhibitNo` repetido, se o cabeçalho declara `caseNo` e `party` e se não resta nenhum marcador de modelo na coluna do facto. Não decide se a prova é autêntica, se foi obtida licitamente ou se é pertinente, nem se prova o facto, nem se deve ser admitida ou excluída: isso é o juízo do tribunal depois do contraditório.
+
+## O que ele responde
+
+| Você pergunta | O que ele responde |
+|---|---|
+| Entregámos dentro do prazo fixado pelo tribunal. Esta ferramenta confirma isso? | Não. `EV-004` verifica apenas que as duas colunas de data que a própria lista traz são analisáveis e que `obtainedAt` não é posterior a `submittedAt`; não calcula qualquer prazo probatório, porque esse prazo é fixado pelo tribunal ou acordado pelas partes, com prorrogações e suspensões próprias. Uma leitura dia a dia da lista não constitui, por isso, uma conclusão sobre a tempestividade. |
+| O nome do exhibit está preenchido, mas a coluna do facto está vazia. | `EV-001` abrange `claim` e `exhibitName` em conjunto e pede apenas que pelo menos um dos dois esteja preenchido; reporta a linha em que ambas as células estão vazias e não julga se o exhibit basta para provar o facto. |
+| Duas linhas trazem o mesmo número de exhibit. | `EV-005` compara os valores de `exhibitNo` dentro da lista, ignorando espaços, e reporta a linha posterior juntamente com aquela que duplica. Apenas estabelece que o número não é único: se é um registo duplicado ou um número mal copiado, cabe a você decidir. Uma célula de número vazia não entra nessa comparação. |
+| A origem deste exhibit é óbvia e, mesmo assim, a regra dispara. | Porque a célula de origem não está preenchida. `EV-002` exige um `source` em cada exhibit a que a lista dê essa coluna; verifica que a célula tem conteúdo, não que a fonte seja lícita ou que o modo de obtenção tenha sido regular. |
+| A nossa lista não traz número de processo nem parte que a apresenta no cabeçalho. | `EV-006` lê o cabeçalho e reporta qual de `caseNo` e `party` o material não declara. Verifica a declaração, não se o declarado está correto, e uma declaração em falta é reportada uma só vez para o cabeçalho, não linha a linha. |
+| Que regra reporta `skipped` e por quê? | `EV-003` fá-lo de origem: os seus `values` vêm vazios, ou seja, o vocabulário de formas não está configurado, e o plugin não codifica uma lista de classes de prova porque os processos civil, administrativo e penal não enumeram as mesmas. Preencha `values` com as classes do seu processo e a regra passa a correr; a partir daí verifica apenas que cada célula `form` é uma delas, não a que classe pertence realmente uma prova. |
+
+## Normas que segue
+
+| Documento | Número | Regras que o citam |
+|---|---|---|
+| 《最高人民法院关于民事诉讼证据的若干规定》 | 法释〔2019〕19号（现行版本与条号本次未核实） | EV-001, EV-002, EV-004, EV-005, EV-006, EV-007 |
+| 《最高人民法院关于民事诉讼证据的若干规定》 | 法释〔2019〕19号（自 2020 年 5 月 1 日起施行） | EV-003 |
 
 **Boundary:** this plugin checks an **证据清单** for what a list can be held to mechanically — that every
 exhibit names itself and the fact it is offered to prove, that its source is recorded, that its form comes
