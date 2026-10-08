@@ -52,8 +52,7 @@ applies a versioned rule pack, and returns a report.
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./dsh-evidence-check-0.1.0.tgz
+dsh plugin --profile <name> add dsh-evidence-check
 dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
 ```
 

@@ -41,8 +41,7 @@ case.**
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./*.tgz
+dsh plugin --profile <name> add dsh-evidence-check
 dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
 ```
 
