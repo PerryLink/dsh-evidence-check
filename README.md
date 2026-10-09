@@ -1,6 +1,14 @@
 # dsh-evidence-check — Court exhibit list completeness and internal consistency check
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-evidence-check` reads one exhibit list — the case header plus one row per exhibit — and checks that list's own completeness and internal consistency: that each exhibit carries a name and the fact it is offered to prove (`claim`, `exhibitName`), that its `source` is recorded, that its `form` comes from the vocabulary you configure, that `obtainedAt` parses and does not fall after `submittedAt`, that no `exhibitNo` is repeated, that the header declares `caseNo` and `party`, and that no template placeholder survives in the fact column. It does not decide whether evidence is authentic, lawfully obtained or relevant, whether it proves the fact, or whether it should be admitted or excluded: that is the court's judgement after cross-examination.
+
+## What it looks like
+
+![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-demo.png)
+
+Real output from this plugin over its own `EV-001` test fixture — not a mock-up. The rule pack ships no invented quotations, so a finding names both the clause it applied and the fact that the clause text was not obtained.
 
 ## What it answers
 

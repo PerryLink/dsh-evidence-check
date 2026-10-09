@@ -1,6 +1,14 @@
 # dsh-evidence-check — Verificação da completude e da coerência interna de uma lista de provas judiciais
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-evidence-check` lê uma lista de exhibits —o cabeçalho do processo mais uma linha por exhibit— e verifica a completude e a coerência interna dessa lista: se cada exhibit traz nome e o facto que pretende provar (`claim`, `exhibitName`), se o seu `source` está registado, se o seu `form` vem do vocabulário que você configurar, se `obtainedAt` é analisável e não é posterior a `submittedAt`, se não há `exhibitNo` repetido, se o cabeçalho declara `caseNo` e `party` e se não resta nenhum marcador de modelo na coluna do facto. Não decide se a prova é autêntica, se foi obtida licitamente ou se é pertinente, nem se prova o facto, nem se deve ser admitida ou excluída: isso é o juízo do tribunal depois do contraditório.
+
+## Como é a saída
+
+![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-demo.png)
+
+Saída real deste plugin sobre o seu próprio fixture de teste `EV-001` — não é uma simulação. O pacote de regras não inventa citações, por isso cada achado nomeia a cláusula aplicada e avisa que o seu texto não foi obtido.
 
 ## O que ele responde
 
