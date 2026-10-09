@@ -1,6 +1,6 @@
 {
   "name": "dsh-evidence-check",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "证据清单齐备性核对（按待证事实与证据要素核对清单自洽，仅提示差异，不作出定性结论）",
   "type": "module",
   "main": "lib/index.mjs",
