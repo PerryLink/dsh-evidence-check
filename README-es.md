@@ -8,7 +8,7 @@
 
 ![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-demo.png)
 
-Salida real de este plugin sobre su propio fixture de prueba `EV-001` — no es un montaje. El paquete de reglas no inventa citas, así que cada hallazgo nombra la cláusula aplicada y advierte que su texto no se obtuvo.
+Salida real de este plugin sobre su propio fixture de prueba `EV-001` — no es un montaje. El paquete de reglas no inventa citas: cada hallazgo nombra la cláusula aplicada y si su excerpt es una cita literal o una inferencia de principio.
 
 ## Qué responde
 

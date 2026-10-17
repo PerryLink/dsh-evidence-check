@@ -3,6 +3,7 @@
 ## 0.2.6 - 2026-10-17
 
 - Compatibility: declare `engines.dsh` `>=0.2.1-0 <0.3.0`; move `@deepseek-ai/dsh-*` devDependencies to `0.2.1-rc.2`; add `@deepseek-ai/dsh-working-directory`.
+- Rules/docs: `EV-006` names the 第五十二条第一款 it actually quotes; the pack no longer says every excerpt is a placeholder; the README repeats the per-rule status.
 - Docs: the compatibility table no longer claims `engines.dsh` is undeclared; drop the retired `both` tool mode.
 
 

@@ -8,7 +8,7 @@
 
 ![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-demo.png)
 
-本插件对自己 `EV-001` 测试夹具的**真实输出**，不是示意图。规则库不伪造引文，因此每条发现都会同时写明所引条款，以及该条款原文本次未取得。
+本插件对自己 `EV-001` 测试夹具的**真实输出**，不是示意图。规则库不伪造引文：每条发现都会写明所引条款，以及该条 excerpt 是逐字引文还是原则性推论。
 
 ## 它回答什么问题
 
