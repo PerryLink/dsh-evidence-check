@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.9] - 2026-10-18
+
+### Fixed
+
+- **The rule-pack header no longer says every `excerpt` is not a quotation.** The pack’s excerpts are verbatim; the old header contradicted both the README and the citations gate. It now states the rule: quote verbatim, or write “本次未取得” without inventing text.
+
 ## [0.2.8] - 2026-10-18
 
 ### Changed
