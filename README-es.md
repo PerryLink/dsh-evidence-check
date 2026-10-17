@@ -4,6 +4,13 @@
 
 `dsh-evidence-check` lee una lista de exhibits —la cabecera del caso más una fila por exhibit— y comprueba la completitud y la coherencia interna de esa lista: que cada exhibit lleve nombre y el hecho que pretende probar (`claim`, `exhibitName`), que su `source` esté registrado, que su `form` provenga del vocabulario que usted configure, que `obtainedAt` se pueda analizar y no sea posterior a `submittedAt`, que no se repita ningún `exhibitNo`, que la cabecera declare `caseNo` y `party`, y que no quede ningún marcador de plantilla en la columna del hecho. No decide si la prueba es auténtica, si se obtuvo lícitamente o si es pertinente, ni si prueba el hecho, ni si debe admitirse o excluirse: eso lo juzga el tribunal tras el careo.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-evidence-check
+dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
+```
+
 ## Cómo se ve la salida
 
 ![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-hero.png)
@@ -67,13 +74,6 @@ case.**
 ## What it does
 
 La tabla de reglas, los campos y el comportamiento detallado están en [README.md](README.md#what-it-does) (versión principal en inglés). El plugin sólo enumera divergencias literales frente a las cláusulas citadas e indica en `skipped` cada comprobación que no pudo ejecutarse.
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-evidence-check
-dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
-```
 
 ## Configuration
 

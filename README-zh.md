@@ -4,6 +4,13 @@
 
 `dsh-evidence-check` 读取一份证据清单——案件表头加每份证据一行——核对这份清单自身的齐备与自洽：每份证据是否写明名称与待证事实（`claim`、`exhibitName`）、是否注明来源（`source`）、证据形式（`form`）是否属于你所配置的取值口径、取得日期（`obtainedAt`）是否可解析且不晚于提交日期（`submittedAt`）、证据编号（`exhibitNo`）是否唯一、表头是否声明案号（`caseNo`）与举证方（`party`）、待证事实栏是否残留模板占位符。它不判断证据是否真实、取得是否合法、是否具有关联性，是否足以证明待证事实，是否应予采信或排除——那是法庭经质证后依法作出的判断。
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-evidence-check
+dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
+```
+
 ## 实际输出长什么样
 
 ![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-hero.png)
@@ -67,13 +74,6 @@ case.**
 ## What it does
 
 规则表、字段说明与行为细节见 [README.md](README.md#what-it-does)（英文主版本）。本插件只列出材料与所引条款之间的字面差异，并对无法执行的检查在 `skipped` 中逐项说明。
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-evidence-check
-dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
-```
 
 ## Configuration
 

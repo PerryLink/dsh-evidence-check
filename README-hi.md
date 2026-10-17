@@ -4,6 +4,13 @@
 
 `dsh-evidence-check` एक न्यायालयीन साक्ष्य-सूची पढ़ता है — मुकदमे का हेडर और प्रत्येक साक्ष्य की एक पंक्ति — और उसी सूची की पूर्णता तथा आंतरिक संगति की जाँच करता है: क्या प्रत्येक साक्ष्य का नाम और वह तथ्य दर्ज है जिसे सिद्ध करना है (`claim`, `exhibitName`), क्या उसका `source` दर्ज है, क्या उसका `form` आपके द्वारा कॉन्फ़िगर की गई सूची से है, क्या `obtainedAt` पढ़ा जा सकता है और `submittedAt` के बाद का नहीं है, क्या कोई `exhibitNo` दोहराया नहीं गया, क्या हेडर `caseNo` और `party` घोषित करता है, और क्या तथ्य-कॉलम में कोई टेम्पलेट प्लेसहोल्डर शेष नहीं है। यह तय नहीं करता कि साक्ष्य असली है, वैध रूप से प्राप्त हुआ है या प्रासंगिक है, कि वह तथ्य सिद्ध करता है, या कि उसे स्वीकार या अस्वीकार किया जाना चाहिए — वह जिरह के बाद न्यायालय का निर्णय है।
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-evidence-check
+dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
+```
+
 ## आउटपुट कैसा दिखता है
 
 ![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-hero.png)
@@ -67,13 +74,6 @@ case.**
 ## What it does
 
 नियम-सूची, फ़ील्ड और विस्तृत व्यवहार [README.md](README.md#what-it-does) (अंग्रेज़ी मुख्य संस्करण) में हैं। यह प्लगइन केवल उद्धृत धाराओं के सामने शाब्दिक अंतर सूचीबद्ध करता है और हर न चल पाई जाँच को `skipped` में बताता है।
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-evidence-check
-dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
-```
 
 ## Configuration
 

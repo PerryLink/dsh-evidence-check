@@ -4,6 +4,13 @@
 
 `dsh-evidence-check` reads one exhibit list — the case header plus one row per exhibit — and checks that list's own completeness and internal consistency: that each exhibit carries a name and the fact it is offered to prove (`claim`, `exhibitName`), that its `source` is recorded, that its `form` comes from the vocabulary you configure, that `obtainedAt` parses and does not fall after `submittedAt`, that no `exhibitNo` is repeated, that the header declares `caseNo` and `party`, and that no template placeholder survives in the fact column. It does not decide whether evidence is authentic, lawfully obtained or relevant, whether it proves the fact, or whether it should be admitted or excluded: that is the court's judgement after cross-examination.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-evidence-check
+dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
+```
+
 ## What it looks like
 
 ![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-hero.png)
@@ -78,13 +85,6 @@ applies a versioned rule pack, and returns a report.
 | `EV-005` | exhibit numbers are unique | warn | principle |
 | `EV-006` | the list names its case and filing party | warn | principle |
 | `EV-007` | the fact column holds no unreplaced placeholder | warn | principle |
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-evidence-check
-dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
-```
-
 ## Configuration
 
 | Key | Type | Default | Description |
