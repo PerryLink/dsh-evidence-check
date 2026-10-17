@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/assets/dsh-evidence-check-hero.png",
+    "kind": "hero",
+    "alt": "dsh-evidence-check terminal output",
+    "caption": "Real dsh-evidence-check checker output; 31 tests passed."
+  },
+  {
+    "path": "docs/assets/dsh-evidence-check-demo.gif",
+    "kind": "demo",
+    "alt": "Animated dsh-evidence-check terminal session",
+    "caption": "The same run, assembled line by line."
+  }
+]

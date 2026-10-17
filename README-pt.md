@@ -6,7 +6,9 @@
 
 ## Como é a saída
 
-![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-demo.png)
+![Terminal demo of dsh-evidence-check: real output over its EV-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-hero.png)
+
+![Animated terminal demo of dsh-evidence-check](https://raw.githubusercontent.com/PerryLink/dsh-evidence-check/main/docs/assets/dsh-evidence-check-demo.gif)
 
 Saída real deste plugin sobre o seu próprio fixture de teste `EV-001` — não é uma simulação. O pacote de regras não inventa citações: cada achado nomeia a cláusula aplicada e se o seu excerpt é uma citação literal ou uma inferência de princípio.
 
