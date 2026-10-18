@@ -41,22 +41,11 @@ dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
 
 **边界（中文译文，以英文原文为准）：** 本插件核对一份 **证据清单** 在清单层面可以机械要求到的事项——每份证据是否写明名称与待证事实，是否注明来源，证据形式是否取自你配置的取值口径，取得是否先于提交，证据编号是否唯一，清单是否写明案号与举证方，以及是否残留占位符。它**不**判定证据是否真实、取得是否合法、是否具有关联性，也不判定其能否证明待证事实，或是否应当采信或排除。**那是法庭经质证后作出的判断，也是案件的核心。**
 
-> ### ⚠️ Read this before trusting a citation in the report
+> ### ⚠️ 在采信报告中的引文之前，请先读这一节（以英文原文为准）
 >
-> **Every `excerpt` in this plugin's rule pack says, in so many words, that the clause text was not
-> obtained.** The regime lives in 《中华人民共和国民事诉讼法》, 《最高人民法院关于民事诉讼证据的若干规定》
-> and 《中华人民共和国行政诉讼法》. The verification pass could not retrieve verbatim clause text, so rather
-> than paraphrase a quotation the pack states the gap in the `excerpt` field itself and puts the honest
-> reasoning in `note`. Every rule is therefore `warn` or `info`, and a test asserts that no rule claims a
-> quotation it does not have. **When the texts are in hand, two things must be done: replace each `excerpt`
-> with the real clause, and raise `kind` to `direct`.**
+> **本插件规则库中的每一条 `excerpt` 都明确写着：本次未取得条款原文。** 该制度见于《中华人民共和国民事诉讼法》、《最高人民法院关于民事诉讼证据的若干规定》和《中华人民共和国行政诉讼法》。核验过程无法取得逐字条款原文，因此规则库没有转述引文，而是把这一缺口写在 `excerpt` 字段本身，并把诚实的理由写进 `note`。因此每条规则都是 `warn` 或 `info`，并有测试断言：没有任何一条规则声称拥有一条它并不拥有的引文。**拿到原文后，必须做两件事：把每条 `excerpt` 替换为真实条款，并把 `kind` 提升为 `direct`。**
 >
-> Two notes on what the findings mean. **The form vocabulary ships empty** — civil, administrative and
-> criminal procedure list different kinds of evidence, so `EV-003` reports itself in `skipped` rather than
-> imposing one list; classifying a piece of evidence is a legal judgement in any case. And `EV-004` checks
-> only that **acquisition precedes submission**; it makes **no** finding about the evidence period, because
-> that period is set by the court or agreed by the parties, allows for extensions, and a list rarely records
-> enough to compute it.
+> 关于这些发现意味着什么，有两点说明。**证据形式词表出厂为空**——民事、行政与刑事诉讼列举的证据种类各不相同，因此 `EV-003` 报告自己进了 `skipped`，而不是强加一份清单；况且对一份证据进行分类本身就是法律判断。`EV-004` 只核对**取得先于提交**；它对举证期限**不作任何**判断，因为该期限由法院设定或由当事人商定，允许延长，而一份清单很少记录到足以计算它的程度。
 
 ## Compatibility
 
