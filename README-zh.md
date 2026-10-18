@@ -39,13 +39,7 @@ dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
 | 《最高人民法院关于民事诉讼证据的若干规定》 | 法释〔2019〕19号（现行版本与条号本次未核实） | EV-001, EV-002, EV-004, EV-005, EV-006, EV-007 |
 | 《最高人民法院关于民事诉讼证据的若干规定》 | 法释〔2019〕19号（自 2020 年 5 月 1 日起施行） | EV-003 |
 
-**Boundary:** this plugin checks an **证据清单** for what a list can be held to mechanically — that every
-exhibit names itself and the fact it is offered to prove, that its source is recorded, that its form comes
-from your vocabulary, that acquisition precedes submission, that exhibit numbers are unique, that the list
-names its case and the party filing it, and that no placeholder survives. It does **not** decide whether
-evidence is authentic, lawfully obtained or relevant, whether it proves the fact, or whether it should be
-admitted or excluded. **That is the court's judgement after cross-examination, and it is the heart of the
-case.**
+**边界（中文译文，以英文原文为准）：** 本插件核对一份 **证据清单** 在清单层面可以机械要求到的事项——每份证据是否写明名称与待证事实，是否注明来源，证据形式是否取自你配置的取值口径，取得是否先于提交，证据编号是否唯一，清单是否写明案号与举证方，以及是否残留占位符。它**不**判定证据是否真实、取得是否合法、是否具有关联性，也不判定其能否证明待证事实，或是否应当采信或排除。**那是法庭经质证后作出的判断，也是案件的核心。**
 
 > ### ⚠️ Read this before trusting a citation in the report
 >
