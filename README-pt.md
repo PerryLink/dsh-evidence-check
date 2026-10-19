@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-evidence-check?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-evidence-check?ref=badge)
 
 `dsh-evidence-check` lê uma lista de exhibits —o cabeçalho do processo mais uma linha por exhibit— e verifica a completude e a coerência interna dessa lista: se cada exhibit traz nome e o facto que pretende provar (`claim`, `exhibitName`), se o seu `source` está registado, se o seu `form` vem do vocabulário que você configurar, se `obtainedAt` é analisável e não é posterior a `submittedAt`, se não há `exhibitNo` repetido, se o cabeçalho declara `caseNo` e `party` e se não resta nenhum marcador de modelo na coluna do facto. Não decide se a prova é autêntica, se foi obtida licitamente ou se é pertinente, nem se prova o facto, nem se deve ser admitida ou excluída: isso é o juízo do tribunal depois do contraditório.
 
