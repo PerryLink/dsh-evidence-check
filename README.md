@@ -28,6 +28,35 @@ dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
 
 The table below is the example set: the first row is the detailed walkthrough, the remaining rows are short cases.
 
+#### Detailed output
+
+**Tool** `evidence_check`
+
+**Input**
+
+~~~json
+{"rows":[{"证据编号":"证1","待证事实":"","证据名称":""}]}
+~~~
+ 
+**Output**
+
+~~~json
+{
+  "id": "dsh-evidence-check.EV-001.de09b5a6",
+  "ruleId": "EV-001",
+  "severity": "warn",
+  "locator": {
+    "field": "claim",
+    "row": 1
+  },
+  "found": "第 1 行 claim、exhibitName 都为空",
+  "expected": "claim、exhibitName 至少应填写一项",
+  "fix": "补填证据名称与待证事实；本条只核对是否填写，不判断证据是否足以证明"
+}
+~~~
+
+*Observed from `tests/fixtures/EV-001/EV-001-unsafe.json (cases.json expects EV-001 count 1); run via lib/index.mjs rules/evidence-check.yaml`*
+
 | You ask | What it answers |
 |---|---|
 | We filed inside the period the court set. Will this tool confirm that? | No. `EV-004` only checks that the two date columns the list itself carries can be parsed and that `obtainedAt` is not later than `submittedAt`; it computes no evidence period, because that period is set by the court's notice or agreed by the parties, with extensions and suspensions of its own. A day-by-day reading of the list is therefore not a finding about timeliness. |

@@ -30,6 +30,35 @@ Saída real deste plugin sobre o seu próprio fixture de teste `EV-001` — não
 A tabela abaixo é o conjunto de exemplos: a primeira linha é o caso detalhado e as demais são casos curtos.
 
 
+#### Saída detalhada
+
+**Ferramenta** `evidence_check`
+
+**Entrada**
+
+~~~json
+{"rows":[{"证据编号":"证1","待证事实":"","证据名称":""}]}
+~~~
+ 
+**Saída**
+
+~~~json
+{
+  "id": "dsh-evidence-check.EV-001.de09b5a6",
+  "ruleId": "EV-001",
+  "severity": "warn",
+  "locator": {
+    "field": "claim",
+    "row": 1
+  },
+  "found": "第 1 行 claim、exhibitName 都为空",
+  "expected": "claim、exhibitName 至少应填写一项",
+  "fix": "补填证据名称与待证事实；本条只核对是否填写，不判断证据是否足以证明"
+}
+~~~
+
+*Observado em `tests/fixtures/EV-001/EV-001-unsafe.json (cases.json expects EV-001 count 1); run via lib/index.mjs rules/evidence-check.yaml`*
+
 | Você pergunta | O que ele responde |
 |---|---|
 | Entregámos dentro do prazo fixado pelo tribunal. Esta ferramenta confirma isso? | Não. `EV-004` verifica apenas que as duas colunas de data que a própria lista traz são analisáveis e que `obtainedAt` não é posterior a `submittedAt`; não calcula qualquer prazo probatório, porque esse prazo é fixado pelo tribunal ou acordado pelas partes, com prorrogações e suspensões próprias. Uma leitura dia a dia da lista não constitui, por isso, uma conclusão sobre a tempestividade. |

@@ -30,6 +30,35 @@ Salida real de este plugin sobre su propio fixture de prueba `EV-001` — no es 
 La tabla siguiente es el conjunto de ejemplos: la primera fila es el caso detallado y las demás son casos breves.
 
 
+#### Salida detallada
+
+**Herramienta** `evidence_check`
+
+**Entrada**
+
+~~~json
+{"rows":[{"证据编号":"证1","待证事实":"","证据名称":""}]}
+~~~
+ 
+**Salida**
+
+~~~json
+{
+  "id": "dsh-evidence-check.EV-001.de09b5a6",
+  "ruleId": "EV-001",
+  "severity": "warn",
+  "locator": {
+    "field": "claim",
+    "row": 1
+  },
+  "found": "第 1 行 claim、exhibitName 都为空",
+  "expected": "claim、exhibitName 至少应填写一项",
+  "fix": "补填证据名称与待证事实；本条只核对是否填写，不判断证据是否足以证明"
+}
+~~~
+
+*Observado en `tests/fixtures/EV-001/EV-001-unsafe.json (cases.json expects EV-001 count 1); run via lib/index.mjs rules/evidence-check.yaml`*
+
 | Usted pregunta | Qué responde |
 |---|---|
 | Presentamos dentro del plazo que fijó el tribunal. ¿Lo confirmará esta herramienta? | No. `EV-004` comprueba únicamente que las dos columnas de fecha que la propia lista trae se puedan analizar y que `obtainedAt` no sea posterior a `submittedAt`; no calcula ningún plazo de prueba, porque ese plazo lo fija el tribunal o lo acuerdan las partes, con prórrogas y suspensiones propias. Una lectura día a día de la lista no es, por tanto, una conclusión sobre la oportunidad. |

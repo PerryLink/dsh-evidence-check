@@ -30,6 +30,35 @@ dsh --profile <name> --dump-config | grep 'dsh-evidence-check'
 下表是示例集：第一行是详细走查，其余行是简短案例。
 
 
+#### 详细输出
+
+**工具** `evidence_check`
+
+**输入**
+
+~~~json
+{"rows":[{"证据编号":"证1","待证事实":"","证据名称":""}]}
+~~~
+ 
+**输出**
+
+~~~json
+{
+  "id": "dsh-evidence-check.EV-001.de09b5a6",
+  "ruleId": "EV-001",
+  "severity": "warn",
+  "locator": {
+    "field": "claim",
+    "row": 1
+  },
+  "found": "第 1 行 claim、exhibitName 都为空",
+  "expected": "claim、exhibitName 至少应填写一项",
+  "fix": "补填证据名称与待证事实；本条只核对是否填写，不判断证据是否足以证明"
+}
+~~~
+
+*来源 `tests/fixtures/EV-001/EV-001-unsafe.json (cases.json expects EV-001 count 1); run via lib/index.mjs rules/evidence-check.yaml`*
+
 | 你会问 | 它怎么答 |
 |---|---|
 | 我们在法院指定的期限内提交了，工具能确认这一点吗？ | 不能。`EV-004` 只核对清单自己带着的两栏日期能否解析、`obtainedAt` 是否不晚于 `submittedAt`；它不推算举证期限——该期限由法院指定或当事人协商，另有延长与中止情形。因此逐日核对清单上的日期，并不构成关于是否逾期提交的结论。 |
