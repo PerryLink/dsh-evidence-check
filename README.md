@@ -92,20 +92,9 @@ case.**
 
 > ### ⚠️ Read this before trusting a citation in the report
 >
-> **Every `excerpt` in this plugin's rule pack says, in so many words, that the clause text was not
-> obtained.** The regime lives in 《中华人民共和国民事诉讼法》, 《最高人民法院关于民事诉讼证据的若干规定》
-> and 《中华人民共和国行政诉讼法》. The verification pass could not retrieve verbatim clause text, so rather
-> than paraphrase a quotation the pack states the gap in the `excerpt` field itself and puts the honest
-> reasoning in `note`. Every rule is therefore `warn` or `info`, and a test asserts that no rule claims a
-> quotation it does not have. **When the texts are in hand, two things must be done: replace each `excerpt`
-> with the real clause, and raise `kind` to `direct`.**
+> **`excerpt` status is per rule, not uniform.** Some rules quote the clause verbatim (`kind: direct`), some are derived from the principle of the cited articles (`kind: derived-from-principle`, capped at `warn`), and some use thresholds your institution configures (`kind: institutional-configuration`, capped at `info`). The pack never paraphrases a quotation: when the text was not obtained, the `excerpt` field says so and the reasoning lives in `note`; a test asserts that no rule claims a quotation it does not have. **For any rule still marked as not obtained, replace the `excerpt` with the real clause and raise `kind` to `direct` once the text is in hand.**
 >
-> Two notes on what the findings mean. **The form vocabulary ships empty** — civil, administrative and
-> criminal procedure list different kinds of evidence, so `EV-003` reports itself in `skipped` rather than
-> imposing one list; classifying a piece of evidence is a legal judgement in any case. And `EV-004` checks
-> only that **acquisition precedes submission**; it makes **no** finding about the evidence period, because
-> that period is set by the court or agreed by the parties, allows for extensions, and a list rarely records
-> enough to compute it.
+> The conclusion is the reviewer's: this plugin lists differences it can point to in the material and does not decide facts or compliance.
 
 ## Compatibility
 
