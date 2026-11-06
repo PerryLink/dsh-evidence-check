@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-flow-dark.svg">
-  <img src="docs/assets/dsh-evidence-check-flow-light.svg" width="100%" alt="Fluxo do dsh-evidence-check: lista de provas (JSON/YAML) → parseMaterial → pacote de regras EV-001…EV-007 → runCheck → relatório (found/expected/fix + skipped); apenas diferenças, o original é somente leitura">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-evidence-check-hero-en-light.webp" width="100%" alt="Banner do dsh-evidence-check: à esquerda, o nome do plugin e seu valor; à direita, uma lista de provas — cabeçalho com caseNo e party, seis colunas e três linhas, com as células vazias, o número de prova repetido e o marcador de posição assinalados, e cada uma das sete regras pendurada sob a coluna que lê (EV-006 no cabeçalho, EV-005 a única regra entre linhas); apenas diferenças, o original nunca é alterado">
 </picture>
 
 # dsh-evidence-check
@@ -37,6 +37,11 @@ dsh plugin --profile <name> add dsh-evidence-check
 ## O que é
 
 O `dsh-evidence-check` lê uma lista de provas —o cabeçalho do processo mais uma linha por prova— e verifica a completude e a coerência interna dessa lista: se cada prova traz nome e o fato que pretende provar (`claim`, `exhibitName`), se o seu `source` está registrado, se o seu `form` vem do vocabulário que você configurar, se `obtainedAt` é analisável e não é posterior a `submittedAt`, se não há `exhibitNo` repetido, se o cabeçalho declara `caseNo` e `party` e se não resta nenhum marcador de modelo na coluna do fato. Devolve a lista do que está incoerente, onde e o que corrigir; não modifica o original, não faz requisições de rede e não chama nenhum modelo. Não decide se a prova é autêntica, se foi obtida licitamente ou se é pertinente, nem se prova o fato, nem se deve ser admitida ou excluída: isso é o juízo do tribunal depois do contraditório.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-evidence-check-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-evidence-check: o material é uma lista de provas — cabeçalho e uma linha por prova — com os nomes de coluna comparados sem diferenciar maiúsculas, espaços, sublinhados e hifens; cada uma das sete regras pende sob a coluna que lê, com seu check.kind: EV-006 no cabeçalho, EV-001 e EV-004 abrangem duas colunas, EV-005 é a única regra entre linhas e EV-003 fica em skipped porque values não está configurado; à direita, os dois canais do relatório — issues localizadas por linha e campo com found/expected/fix, e skipped com o motivo —; a escada inferior mostra o teto de gravidade de cada tipo de fundamento">
+</picture>
 
 ## Instalação em três passos
 

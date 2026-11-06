@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-flow-dark.svg">
-  <img src="docs/assets/dsh-evidence-check-flow-light.svg" width="100%" alt="dsh-evidence-check data flow: exhibit list (JSON/YAML) → parseMaterial → rule pack EV-001…EV-007 → runCheck → report (found/expected/fix + skipped); differences only, the source is read-only">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-evidence-check-hero-en-light.webp" width="100%" alt="dsh-evidence-check banner: left, the plugin name and its value; right, one evidence list — a header declaring caseNo and party, six columns over three rows, with the empty cells, the repeated exhibit number and the placeholder marked, and each of the seven rules hung under the column it reads (EV-006 on the header, EV-005 the only across-row rule); differences only, the original is never modified">
 </picture>
 
 # dsh-evidence-check
@@ -37,6 +37,11 @@ dsh plugin --profile <name> add dsh-evidence-check
 ## What it is
 
 `dsh-evidence-check` reads one exhibit list — the case header plus one row per exhibit — and checks that list's own completeness and internal consistency: that each exhibit carries a name and the fact it is offered to prove (`claim`, `exhibitName`), that its `source` is recorded, that its `form` comes from the vocabulary you configure, that `obtainedAt` parses and does not fall after `submittedAt`, that no `exhibitNo` is repeated, that the header declares `caseNo` and `party`, and that no template placeholder survives in the fact column. It returns the list of what is inconsistent, where, and what to fix; the source file is never modified, it makes no network request and calls no model. It does not decide whether evidence is authentic, lawfully obtained or relevant, whether it proves the fact, or whether it should be admitted or excluded: that is the court's judgement after cross-examination.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-evidence-check-flow-v5-light.svg" width="100%" alt="dsh-evidence-check structure: the material is one evidence list — a header plus one row per exhibit — with column names matched ignoring case, spaces, underscores and hyphens, then canonicalised; each of the seven rules hangs under the column it reads, labelled with its check.kind: EV-006 on the header, EV-001 and EV-004 each spanning two columns, EV-005 the only across-row rule, EV-003 skipped because values is unset; the right card is the report's two channels — issues located by row and field with found/expected/fix, and skipped naming its reason; the bottom staircase gives the severity cap each basis kind imposes">
+</picture>
 
 ## Three-step setup
 

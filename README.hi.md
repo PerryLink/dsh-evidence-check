@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-flow-dark.svg">
-  <img src="docs/assets/dsh-evidence-check-flow-light.svg" width="100%" alt="dsh-evidence-check का कार्यप्रवाह: साक्ष्य-सूची (JSON/YAML) → parseMaterial → नियम-पैक EV-001…EV-007 → runCheck → रिपोर्ट (found/expected/fix + skipped); केवल अंतर, मूल फ़ाइल केवल पढ़ने के लिए">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-evidence-check-hero-en-light.webp" width="100%" alt="dsh-evidence-check बैनर: बाईं ओर प्लगइन का नाम और उसका मूल्य; दाईं ओर एक साक्ष्य-सूची — शीर्ष में caseNo और party, छह स्तंभ और तीन पंक्तियाँ, खाली कोष्ठक, दोहराया गया साक्ष्य-क्रमांक और प्लेसहोल्डर चिह्नित, तथा सातों नियम अपने पढ़े जाने वाले स्तंभ के नीचे टँगे हुए (EV-006 शीर्ष पर, EV-005 एकमात्र पंक्ति-पार नियम); केवल अंतर, मूल फ़ाइल कभी नहीं बदलती">
 </picture>
 
 # dsh-evidence-check
@@ -37,6 +37,11 @@ dsh plugin --profile <name> add dsh-evidence-check
 ## यह क्या है
 
 `dsh-evidence-check` एक साक्ष्य-सूची पढ़ता है — मुकदमे का हेडर और प्रत्येक साक्ष्य की एक पंक्ति — और उसी सूची की पूर्णता तथा आंतरिक संगति जाँचता है: क्या प्रत्येक साक्ष्य का नाम और वह तथ्य दर्ज है जिसे सिद्ध करना है (`claim`, `exhibitName`), क्या उसका `source` दर्ज है, क्या उसका `form` आपके द्वारा कॉन्फ़िगर की गई शब्दावली से है, क्या `obtainedAt` पढ़ा जा सकता है और `submittedAt` के बाद का नहीं है, क्या कोई `exhibitNo` दोहराया नहीं गया, क्या हेडर `caseNo` और `party` घोषित करता है, और क्या तथ्य-कॉलम में कोई टेम्पलेट प्लेसहोल्डर शेष नहीं है। यह बताता है कि क्या असंगत है, कहाँ है और क्या सुधारना है; मूल फ़ाइल कभी नहीं बदलता, कोई नेटवर्क अनुरोध नहीं करता और किसी मॉडल को नहीं बुलाता। यह तय नहीं करता कि साक्ष्य असली है, वैध रूप से प्राप्त हुआ है या प्रासंगिक है, कि वह तथ्य सिद्ध करता है, या कि उसे स्वीकार या अस्वीकार किया जाना चाहिए — वह जिरह के बाद न्यायालय का निर्णय है।
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-evidence-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-evidence-check-flow-v5-light.svg" width="100%" alt="dsh-evidence-check की संरचना: सामग्री एक साक्ष्य-सूची है — शीर्ष और प्रत्येक साक्ष्य के लिए एक पंक्ति — जिसमें स्तंभ-नाम केस, स्पेस, अंडरस्कोर और हाइफ़न की परवाह किए बिना मिलाए जाते हैं; सातों नियम अपने पढ़े जाने वाले स्तंभ के नीचे check.kind के साथ टँगे हैं: EV-006 शीर्ष पर, EV-001 और EV-004 दो-दो स्तंभों पर, EV-005 एकमात्र पंक्ति-पार नियम, और EV-003 values सेट न होने के कारण skipped में; दाईं ओर रिपोर्ट के दो मार्ग — issues पंक्ति और फ़ील्ड तक पहुँचते हुए found/expected/fix के साथ, और skipped अपना कारण बताते हुए; नीचे की सीढ़ी बताती है कि प्रत्येक आधार-प्रकार किस गंभीरता तक सीमित है">
+</picture>
 
 ## तीन चरणों में शुरुआत
 
