@@ -115,6 +115,10 @@ exhibit list (JSON/YAML) ──evidence_check──▶ rule pack EV-001…EV-007
 
 ### Examples
 
+![dsh-evidence-check: real terminal run](docs/assets/dsh-evidence-check-demo.gif)
+
+*Animated replay of a real run recorded in this repository.*
+
 These are the plugin's real entry points; install once, then call one. The output below is the plugin's real run against its own `EV-001` test fixture, not an illustration.
 
 **Detailed output** — tool `evidence_check`, input:

@@ -43,6 +43,11 @@ dsh plugin --profile <name> add dsh-evidence-check
   <img src="docs/assets/dsh-evidence-check-flow-v5-light.svg" width="100%" alt="Estructura de dsh-evidence-check: el material es una lista de pruebas —cabecera y una fila por prueba— con los nombres de columna emparejados sin distinguir mayúsculas, espacios, guiones bajos ni guiones; cada una de las siete reglas cuelga bajo la columna que lee con su check.kind: EV-006 en la cabecera, EV-001 y EV-004 abarcan dos columnas, EV-005 es la única regla entre filas y EV-003 queda en skipped porque values no está configurado; a la derecha, los dos canales del informe —issues localizados por fila y campo con found/expected/fix, y skipped con su motivo—; la escalera inferior indica el tope de gravedad de cada tipo de fundamento">
 </picture>
 
+![dsh-evidence-check: ejecución real de terminal](docs/assets/dsh-evidence-check-demo.gif)
+
+*Repetición animada de una ejecución real registrada en este repositorio.*
+
+
 ## Instalación en tres pasos
 
 1. **Instalar**:

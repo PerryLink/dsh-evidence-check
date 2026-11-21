@@ -43,6 +43,11 @@ O `dsh-evidence-check` lê uma lista de provas —o cabeçalho do processo mais 
   <img src="docs/assets/dsh-evidence-check-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-evidence-check: o material é uma lista de provas — cabeçalho e uma linha por prova — com os nomes de coluna comparados sem diferenciar maiúsculas, espaços, sublinhados e hifens; cada uma das sete regras pende sob a coluna que lê, com seu check.kind: EV-006 no cabeçalho, EV-001 e EV-004 abrangem duas colunas, EV-005 é a única regra entre linhas e EV-003 fica em skipped porque values não está configurado; à direita, os dois canais do relatório — issues localizadas por linha e campo com found/expected/fix, e skipped com o motivo —; a escada inferior mostra o teto de gravidade de cada tipo de fundamento">
 </picture>
 
+![dsh-evidence-check: execução real de terminal](docs/assets/dsh-evidence-check-demo.gif)
+
+*Repetição animada de uma execução real registrada neste repositório.*
+
+
 ## Instalação em três passos
 
 1. **Instalar**:

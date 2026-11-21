@@ -36,6 +36,10 @@ dsh plugin --profile <name> add dsh-evidence-check
 
 ## 它是什么
 
+![dsh-evidence-check 真实终端运行](docs/assets/dsh-evidence-check-demo.gif)
+
+*本仓库一次真实运行的动图回放。*
+
 `dsh-evidence-check` 读取一份证据清单——案件表头加上每份证据一行——核对这份清单自身的齐备与自洽：每份证据是否写明名称与待证事实（`claim`、`exhibitName`）、是否注明来源（`source`）、证据形式（`form`）是否属于你所配置的取值口径、取得日期（`obtainedAt`）是否可解析且不晚于提交日期（`submittedAt`）、证据编号（`exhibitNo`）是否唯一、表头是否声明案号（`caseNo`）与举证方（`party`），以及待证事实栏是否残留模板占位符。它返回一份「哪一行、哪一栏、差什么」的差异清单，不改原件、不联网、不调用模型；不判断证据是否真实、取得是否合法、是否具有关联性，是否足以证明待证事实，是否应予采信或排除——那是法庭经质证后依法作出的判断。
 
 <picture>
