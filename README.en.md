@@ -7,6 +7,8 @@
 
 # dsh-evidence-check
 
+Current version `0.2.16`.
+
 **Check an exhibit list row by row for completeness, source, dates and numbering — and get back a list of which row, which column, what is missing.**
 
 A DeepSeek Harness check plugin for lawyers and litigation support: the case header plus one row per exhibit goes in, a rule pack with verbatim citations runs, and what comes back is the list of differences the material itself can be held to — no source file touched, no verdict issued.
