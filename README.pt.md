@@ -11,6 +11,8 @@
 
 Um plugin de verificação para DeepSeek Harness, feito para advogados e equipes de apoio processual: entra o cabeçalho do processo mais uma linha por prova, aplica-se um pacote de regras com citações literais e sai a lista de divergências que o próprio material permite apontar —sem tocar no original e sem emitir veredicto.
 
+Última verificação: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [Instalar](#instalação-em-três-passos) · [Configuração](#configuração) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -46,7 +48,6 @@ O `dsh-evidence-check` lê uma lista de provas —o cabeçalho do processo mais 
 ![dsh-evidence-check: execução real de terminal](docs/assets/dsh-evidence-check-demo.gif)
 
 *Repetição animada de uma execução real registrada neste repositório.*
-
 
 ## Instalação em três passos
 

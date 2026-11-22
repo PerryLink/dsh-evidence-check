@@ -11,6 +11,8 @@
 
 面向律师与诉讼辅助人员的 DeepSeek Harness 检查插件：案件表头加每份证据一行，套用逐条引文的规则包，只列材料内部可以逐条指认的差异，不改原件、不下结论。
 
+最近一次核验：DeepSeek Harness `dsh-v0.2.3-alpha.1`（2026-11-22）。
+
 [安装](#三步上手) · [配置](#配置) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
